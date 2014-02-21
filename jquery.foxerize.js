@@ -9,7 +9,7 @@
 
 (function($) {
 
-    $.fn.raptorize = function(options) {
+    $.fn.foxerize = function(options) {
 
         //Yo' defaults
         var defaults = {  
@@ -58,24 +58,22 @@
 			var widths = [400, 221, 444, 490, 433];
 			
 
-			
+			var index = 0;
 			
 			
 			// Animating Code
 			function init() {
 				locked = true;
 				
-				
-				
-				var number = Math.floor(Math.random()*shaunPhotos);
+				var number = index % shaunPhotos;// Math.floor(Math.random()*shaunPhotos);
 				var shaunId = "#shaunPhoto"+(number +1);
 				var bottom = (heights[number]*-1 -140)+"px";
-				var foxSoundId = "foxSound"+(Math.floor(Math.random()*foxSounds)+1);
+				var foxSoundId = "foxSound"+((index % foxSounds)+1);
 				
-				
+				index++;
 				
 				$(shaunId).css({
-					"bottom":  bottom,
+					"bottom":  bottom
 				});
 			
 				//Sound Hilarity
